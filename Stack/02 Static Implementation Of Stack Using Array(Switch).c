@@ -20,9 +20,13 @@ void Is_Max_Stack_Element();
 int main()
 {
     int Choice,Element;
-    int Ret = 1;
-    while(1 == Ret)
+
+    //int Ret = 1;
+    while(1)                                          //for( ; ; ) ==>Unconditional Loop
     {
+         printf("\n========== Static Implementation Of Stack Using Array With Switch Case ==========\n");
+        printf("\n\t\t========== Static Stack ==========\n");
+        printf("\n======================================================================\n");
         printf("\n 1. Push Elements : ");
         printf("\n 2. Pop Elements :");
         printf("\n 3. Display All Stack Elements");
@@ -31,10 +35,11 @@ int main()
         printf("\n 6. Maximum Elements Of Stack");
         printf("\n 7. Minimum Elements Of Stack");
         printf("\n 8. Exit");
+        printf("\n======================================================================");
 
         printf("\n\n Enter Your Choice : ");
         scanf("%d",&Choice);
-
+        printf("\n======================================================================\n");
         switch(Choice)
         {
             case 1:
@@ -79,9 +84,15 @@ int main()
                 system("cls");
                 break;
             case 8:
-                printf("\n Thank You For Visiting Application Of Stack Implementation.\n");
-                printf("\n Press Any Key To Continue...!!!\n");
-                exit(Ret);
+                fflush(stdin);
+                printf("Are You Sure Close This Application ...Press Key Y/N : ");
+                char ch = getchar();
+                if(ch == 'Y' || ch == 'y')
+                {
+                    goto DWN;
+                }
+               // exit(0);
+               system("cls");
                 break;
             default:
                 printf("\n Invalid Choice ....!!!");
@@ -89,6 +100,9 @@ int main()
                 system("cls");
         }
     }
+    DWN:
+        printf("\n Thank You For Visiting Application Of Stack Implementation.\n");
+        printf("\n Press Any Key To Continue...!!!\n");
     _getch();
     return 0;
 }
@@ -158,7 +172,7 @@ void Display_Stack()
          printf("\n Display Stack Elements Are == >");
          for(Cnt = Top;Cnt >= 0;Cnt--)
          {
-             printf("\n\t\t | %d |",Stack[Cnt]);
+             printf("\n\t\t | %4d |",Stack[Cnt]);
              //Cnt++;
          }
     }
